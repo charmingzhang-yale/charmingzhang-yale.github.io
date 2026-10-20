@@ -15,3 +15,21 @@ Clustering is widely used to discover hidden structures in unlabeled data, from 
 > **My Reflection — Why This Seminar Caught My Attention**
 >
 > I was particularly drawn to this seminar because I had recently been struggling to reproduce the clustering results reported by Zhang et al. (2023) in *Nature*. Their analysis of P22 mouse brain data identified 11 RNA clusters, but I could only recover 10 using the released code, with an adjusted Rand index (ARI) of approximately 0.77. I found myself torn between trying to match the published results and questioning whether a closer match necessarily meant a better clustering. After all, the published cluster labels are themselves inferred, not observed ground truth. So what exactly was I trying to reproduce, and how could I tell which clustering was more trustworthy? I came to this seminar hoping to find some new perspectives on that question.
+
+
+
+
+
+
+
+
+
+
+
+
+## References
+
+1. Zhang, D., Deng, Y., et al. (2023).
+   Spatial epigenome–transcriptome co-profiling of
+   mammalian tissues. *Nature*, 616, 113–122.
+   https://doi.org/10.1038/s41586-023-05795-1
