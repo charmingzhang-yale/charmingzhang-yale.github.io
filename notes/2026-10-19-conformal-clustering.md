@@ -1,12 +1,37 @@
 ---
 layout: default
-title: "When a Cluster Label Is Not Enough"
+title: "When a Cluster Label Is Not Enough: Conformal Inference for Clustering"
+description: "Research Seminar Notes by Charming Zhang"
 permalink: /notes/conformal-clustering/
 ---
 
-# When a Cluster Label Is Not Enough: Conformal Inference for Clustering
 
-*Research Seminar Notes | Genevera Allen | October 19, 2026*
+<style>
+.page-header {
+  padding: 2rem 1.25rem;
+}
+.page-header .project-name {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+.page-header .project-tagline {
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+}
+@media (max-width: 600px) {
+  .page-header .project-name {
+    font-size: 1.65rem;
+  }
+}
+/* Academic content typography */
+.main-content {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+</style>
+
+*Seminar: Genevera Allen (Columbia University) · October 19, 2026*
 
 ## Motivation: Why Should We Trust Cluster Assignments?
 
