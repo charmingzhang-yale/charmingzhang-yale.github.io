@@ -45,6 +45,17 @@ Clustering is widely used to discover hidden structures in unlabeled data, from 
 
 A natural first attempt is to use **soft cluster labels** directly. Given estimated cluster probabilities, why not simply include the most likely clusters until their cumulative probability exceeds 1 − α? While intuitive, this approach is limited to clustering methods that provide probabilities for new observations and can produce overly conservative, non-adaptive confidence sets.
 
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">Q1. Why is this approach overly conservative?</strong></p>
+  <p>The probability cutoff can overshoot the target. For example, with true cluster probabilities (0.89, 0.11), achieving at least 90% conditional coverage requires including both clusters, yielding 100% coverage but an uninformative set. Unlike conformal prediction's marginal guarantee, this pointwise requirement can be unnecessarily restrictive.</p>
+
+  <p><strong style="color: #167d57;">Q2. Why is it considered non-adaptive?</strong></p>
+  <p>Soft labels already vary across observations. What is missing is calibration adaptivity: the cutoff does not use held-out calibration data to adjust for errors in estimated probabilities. If those estimates are inaccurate, nominal coverage is not guaranteed.</p>
+
+</blockquote>
+
 A second possibility is to borrow **split conformal classification**: cluster the training and calibration data, treat the estimated hard labels as ground truth, and calibrate prediction scores accordingly. The difficulty is that these labels are themselves data-dependent. In particular, cluster labels obtained from separately clustered training and calibration sets are not generally exchangeable, undermining the usual conformal coverage guarantee. Treating uncertain assignments as fixed labels can therefore lead to under-coverage.
 
 Together, these limitations motivate an approach that accounts for uncertainty in the cluster labels themselves.
