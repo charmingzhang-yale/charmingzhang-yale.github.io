@@ -58,6 +58,21 @@ A natural first attempt is to use **soft cluster labels** directly. Given estima
 
 A second possibility is to borrow **split conformal classification**: cluster the training and calibration data, treat the estimated hard labels as ground truth, and calibrate prediction scores accordingly. The difficulty is that these labels are themselves data-dependent. In particular, cluster labels obtained from separately clustered training and calibration sets are not generally exchangeable, undermining the usual conformal coverage guarantee. Treating uncertain assignments as fixed labels can therefore lead to under-coverage.
 
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">Q3. What does "undermining the usual conformal coverage guarantee" mean?</strong></p>
+
+  <p>In standard split conformal classification, observed labels in a held-out calibration set are used to calculate nonconformity scores. If the calibration observations and a new observation are exchangeable, the resulting prediction set satisfies:</p>
+
+  <p><strong>P(Y_new ∈ Ĉ(X_new)) ≥ 1 − α</strong></p>
+
+  <p>For α = 0.1, this means the prediction set contains the true label at least 90% of the time across repeated samples—not necessarily for every individual observation. This is called a <strong>finite-sample marginal coverage guarantee</strong>.</p>
+
+  <p>In clustering, however, true labels are unobserved. Replacing them with estimated hard labels can make calibration and test scores non-exchangeable, since these labels depend on the clustering procedure and potentially on which observations are included. The standard conformal guarantee therefore no longer automatically applies. This does not mean under-coverage is inevitable, only that the theoretical guarantee is lost.</p>
+
+</blockquote>
+
 Together, these limitations motivate an approach that accounts for uncertainty in the cluster labels themselves.
 
 
