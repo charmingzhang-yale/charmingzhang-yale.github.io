@@ -74,6 +74,23 @@ A second possibility is to borrow **split conformal classification**: cluster th
 
 Together, these limitations motivate an approach that accounts for uncertainty in the cluster labels themselves.
 
+## The Proposed Method: Split Stochastic Conformal Clustering
+
+The key innovation is to replace deterministic cluster assignments with **stochastic labels** sampled from estimated soft clustering probabilities. For example, an observation with probabilities (0.7, 0.2, 0.1) is no longer automatically assigned to Cluster 1; instead, its label is randomly drawn according to these probabilities.
+
+The procedure then follows a split conformal framework. The data are divided into training and calibration sets, each clustered separately to generate stochastic labels. A soft classifier is trained on the training set, while calibration labels are aligned with the classifier's label ordering to account for arbitrary cluster numbering. Finally, conformity scores on the calibration set determine a threshold for constructing confidence sets of plausible labels for new observations.
+
+Rather than treating estimated cluster assignments as ground truth, this approach incorporates their uncertainty into the inference procedure.
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">Q4. Why do we need a soft classifier and label alignment?</strong></p>
+  <p>The soft classifier learns to predict cluster membership probabilities from the stochastic training labels. However, cluster numbers are arbitrary: Cluster 1 in the training set might correspond to Cluster 3 in the calibration set. Label alignment finds a permutation that best matches the calibration labels to the classifier's predictions, ensuring that conformal scores compare corresponding clusters rather than mismatched numbers.</p>
+
+  <p><strong style="color: #167d57;">Q5. What exactly does the method output?</strong></p>
+  <p>Rather than producing another clustering partition, the method returns a <strong>confidence set of plausible cluster labels</strong> for each query point. For example, Ĉ(x) = {1, 2} indicates that both clusters remain plausible. The statistical goal is to cover the unobserved true label (up to label permutation) with high marginal probability, subject to the method's theoretical assumptions—not to guarantee 90% confidence for every individual observation.</p>
+
+</blockquote>
 
 
 
