@@ -65,7 +65,9 @@ A second possibility is to borrow **split conformal classification**: cluster th
 
   <p>In standard split conformal classification, observed labels in a held-out calibration set are used to calculate nonconformity scores. If the calibration observations and a new observation are exchangeable, the resulting prediction set satisfies:</p>
 
-  <p><strong>P(Y_new ∈ Ĉ(X_new)) ≥ 1 − α</strong></p>
+  
+<p><strong>P(Y<sub>new</sub> ∈ Ĉ(X<sub>new</sub>)) ≥ 1 − α</strong></p>
+
 
   <p>For α = 0.1, this means the prediction set contains the true label at least 90% of the time across repeated samples—not necessarily for every individual observation. This is called a <strong>finite-sample marginal coverage guarantee</strong>.</p>
 
