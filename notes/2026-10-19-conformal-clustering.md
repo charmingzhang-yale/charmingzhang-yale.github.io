@@ -7,6 +7,10 @@ permalink: /notes/conformal-clustering/
 
 
 <style>
+.main-content {
+  font-size: 1rem;
+  line-height: 1.65;
+}
 .page-header {
   padding: 2rem 1.25rem;
 }
@@ -23,11 +27,6 @@ permalink: /notes/conformal-clustering/
   .page-header .project-name {
     font-size: 1.65rem;
   }
-}
-/* Academic content typography */
-.main-content {
-  font-size: 1rem;
-  line-height: 1.65;
 }
 </style>
 
