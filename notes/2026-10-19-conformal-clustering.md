@@ -41,7 +41,13 @@ Clustering is widely used to discover hidden structures in unlabeled data, from 
   <p>While reproducing the P22 mouse-brain RNA clustering in Zhang et al. (2023), I recovered 10 clusters instead of the reported 11 (ARI ≈ 0.77), even using the released code. I initially wanted to close this gap, but found myself questioning that very goal. If the published cluster labels are themselves inferred rather than observed ground truth, does matching them more closely necessarily mean better clustering? I came to this seminar hoping to find a new perspective on that uncertainty.</p>
 </blockquote>
 
+## Why Two Intuitive Approaches Fall Short
 
+A natural first attempt is to use **soft cluster labels** directly. Given estimated cluster probabilities, why not simply include the most likely clusters until their cumulative probability exceeds \(1-\alpha\)? While intuitive, this approach is limited to clustering methods that provide probabilities for new observations and can produce overly conservative, non-adaptive confidence sets.
+
+A second possibility is to borrow **split conformal classification**: cluster the training and calibration data, treat the estimated hard labels as ground truth, and calibrate prediction scores accordingly. The difficulty is that these labels are themselves data-dependent. In particular, cluster labels obtained from separately clustered training and calibration sets are not generally exchangeable, undermining the usual conformal coverage guarantee. Treating uncertain assignments as fixed labels can therefore lead to under-coverage.
+
+Together, these limitations motivate an approach that accounts for uncertainty in the cluster labels themselves.
 
 
 
