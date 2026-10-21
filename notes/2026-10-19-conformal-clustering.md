@@ -118,10 +118,6 @@ The empirical results examine both **coverage** and **average confidence set siz
 
 
 
-
-## References
-
-
 ## References
 
 [1] Hur, Y., Nath, A., & Allen, G. (2026). Inference for Clustering: Conformal Sets for Cluster Labels. *arXiv preprint*, arXiv:2604.03488. https://doi.org/10.48550/arXiv.2604.03488
