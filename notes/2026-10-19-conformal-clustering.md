@@ -92,7 +92,11 @@ Rather than treating estimated cluster assignments as ground truth, this approac
 
 </blockquote>
 
+## Theoretical Guarantees and Empirical Evidence
 
+How reliable are these confidence sets? The main theorem establishes a **finite-sample coverage lower bound** that accounts for two sources of uncertainty: **soft cluster label error**, measuring the discrepancy between estimated and true soft labels, and **replace-one instability**, measuring how much the clustering distribution changes when a single observation is replaced. Rather than claiming unconditional coverage, the framework explicitly quantifies potential under-coverage. Under additional consistency and stability assumptions, the error terms vanish asymptotically, yielding coverage approaching the nominal level. These conditions are verified for a class of correctly specified parametric mixture models.
+
+The empirical results examine both **coverage** and **average confidence set size**. In Gaussian and Gamma mixture simulations, stochastic conformal clustering offers a more favorable balance between reliability and informativeness than the naive approaches in the reported settings. Applications to single-cell RNA-seq further illustrate how confidence sets can reveal ambiguity in cell-type assignments that conventional hard clustering may obscure.
 
 
 
