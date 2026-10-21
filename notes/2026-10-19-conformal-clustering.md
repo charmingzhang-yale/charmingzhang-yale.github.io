@@ -117,7 +117,7 @@ The empirical results examine both **coverage** and **average confidence set siz
 
 ## Limitations and Future Directions
 
-An important limitation of the current framework is its assumption that the number of clusters, \(K\), is fixed and known. In practice, however, \(K\) is often selected from the data, introducing additional model-selection uncertainty. Consequently, the theoretical coverage guarantees established for fixed \(K\) do not automatically extend to data-driven cluster-number selection. Developing valid inference procedures that account for both sources of uncertainty remains an open challenge.
+An important limitation of the current framework is its assumption that the number of clusters, *K*, is fixed and known. In practice, however, *K* is often selected from the data, introducing additional model-selection uncertainty. Consequently, the theoretical coverage guarantees established for fixed *K* do not automatically extend to data-driven cluster-number selection. Developing valid inference procedures that account for both sources of uncertainty remains an open challenge.
 
 Beyond this limitation, several directions merit further investigation, including more flexible estimation of soft cluster probabilities, extensions beyond split conformal inference, and the propagation of clustering uncertainty into downstream analyses. The latter is particularly relevant to single-cell genomics, where uncertain cluster assignments may influence subsequent biological interpretations.
 
@@ -137,8 +137,10 @@ Beyond this limitation, several directions merit further investigation, includin
 
 
 
+
 ## References
 
-[1] Hur, Y., Nath, A., & Allen, G. (2026). Inference for Clustering: Conformal Sets for Cluster Labels. *arXiv preprint*, arXiv:2604.03488. https://doi.org/10.48550/arXiv.2604.03488
+[1] Hur, Y., Nath, A., & Allen, G. (2026). Inference for Clustering: Conformal Sets for Cluster Labels. *arXiv preprint*, arXiv:2604.03488. [https://doi.org/10.48550/arXiv.2604.03488](https://doi.org/10.48550/arXiv.2604.03488)
 
-[2] Zhang, D., Deng, Y., et al. (2023). Spatial epigenome–transcriptome co-profiling of mammalian tissues. *Nature*, 616, 113–122. https://doi.org/10.1038/s41586-023-05795-1
+[2] Zhang, D., Deng, Y., et al. (2023). Spatial epigenome–transcriptome co-profiling of mammalian tissues. *Nature*, 616, 113–122. [https://doi.org/10.1038/s41586-023-05795-1](https://doi.org/10.1038/s41586-023-05795-1)
+
