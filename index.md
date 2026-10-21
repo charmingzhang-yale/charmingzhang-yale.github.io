@@ -67,3 +67,11 @@ I am also studying geographic patterns in Alzheimer's disease and related dement
 I write research notes on statistical methods and biomedical applications, combining technical explanations with questions and reflections arising from papers and academic seminars.
 
 - [Conformal Clustering — Genevera Allen (2026)](/notes/conformal-clustering/)
+
+
+## Contact
+
+I welcome academic discussions and potential research collaborations.
+
+- **Email:** [charming.zhang@yale.edu](charming.zhang@yale.edu)
+- **GitHub:** [charmingzhang-yale](https://github.com/charmingzhang-yale)
