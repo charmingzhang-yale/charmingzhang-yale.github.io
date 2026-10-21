@@ -115,6 +115,25 @@ The empirical results examine both **coverage** and **average confidence set siz
 
 </blockquote>
 
+## Limitations and Future Directions
+
+An important limitation of the current framework is its assumption that the number of clusters, \(K\), is fixed and known. In practice, however, \(K\) is often selected from the data, introducing additional model-selection uncertainty. Consequently, the theoretical coverage guarantees established for fixed \(K\) do not automatically extend to data-driven cluster-number selection. Developing valid inference procedures that account for both sources of uncertainty remains an open challenge.
+
+Beyond this limitation, several directions merit further investigation, including more flexible estimation of soft cluster probabilities, extensions beyond split conformal inference, and the propagation of clustering uncertainty into downstream analyses. The latter is particularly relevant to single-cell genomics, where uncertain cluster assignments may influence subsequent biological interpretations.
+
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">My Reflection — The Uncertainty Before Clustering</strong></p>
+
+  <p>What struck me most about this work was its emphasis on mathematical guarantees rather than increasing model complexity. Having spent considerable time working with computationally intensive models, I found this approach genuinely refreshing.</p>
+
+  <p>Yet the assumption of a fixed and known number of clusters kept bothering me. In practice, deciding how many clusters to use is often one of the hardest parts of clustering. Suppose I first select K using the Silhouette Score and then apply conformal clustering. If the results look promising, how much of that success comes from choosing K appropriately, how much from the clustering procedure itself, and how much from conformal calibration? If the results are poor, which step should I question first?</p>
+
+  <p>I admire the statistical guarantees this framework offers under its assumptions, but I am left wondering about the uncertainty that arises <strong>before we even begin assigning cluster labels</strong>.</p>
+
+</blockquote>
+
 
 
 
