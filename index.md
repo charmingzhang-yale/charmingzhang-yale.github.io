@@ -51,13 +51,9 @@ My research interests lie at the intersection of statistical methodology, comput
 
 I am currently working with Professor Qiao Liu at Yale on research involving paired spatial transcriptomic and chromatin accessibility data. My work includes evaluating multimodal representations, reproducing existing computational methods, and investigating generative approaches to modeling cross-modal biological structure.
 
-*Ongoing research.*
-
 ### Global Geography of ADRD Clinical Trials
 
-I am also studying geographic patterns in Alzheimer's disease and related dementias (ADRD) clinical trials, examining how trial-site participation relates to disease burden and national development. This work aims to better characterize geographic representation and disparities in global clinical research.
-
-*Ongoing research.*
+I am also studying geographic patterns in Alzheimer's disease and related dementias (ADRD) clinical trials with Professor Xi Chen, examining how trial-site participation relates to disease burden and national development. This work aims to better characterize geographic representation and disparities in global clinical research.
 
 ## Research Interests
 
