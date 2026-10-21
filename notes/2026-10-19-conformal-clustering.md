@@ -32,13 +32,15 @@ permalink: /notes/conformal-clustering/
 
 *Seminar: Genevera Allen (Columbia University) · October 19, 2026*
 
+*Based primarily on the research by Hur, Nath, and Allen [1].*
+
 ## Motivation: Why Should We Trust Cluster Assignments?
 
 Clustering is widely used to discover hidden structures in unlabeled data, from identifying cell types in single-cell genomics to uncovering subgroups in complex populations. Yet assigning an observation to a cluster does not necessarily mean that the assignment is reliable. Consider a cell assigned to Cluster 3: could Cluster 2 be equally plausible? Would its assignment change under a different sample or clustering run? Traditional clustering methods often produce definitive labels without directly quantifying such uncertainty. This raises a fundamental statistical question: **How can we construct reliable measures of uncertainty for cluster assignments when the underlying labels are themselves unobserved?**
 
 <blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
   <p><strong style="color: #167d57;">My Reflection — Why This Seminar Caught My Attention</strong></p>
-  <p>While reproducing the P22 mouse-brain RNA clustering in Zhang et al. (2023), I recovered 10 clusters instead of the reported 11 (ARI ≈ 0.77), even using the released code. I initially wanted to close this gap, but found myself questioning that very goal. If the published cluster labels are themselves inferred rather than observed ground truth, does matching them more closely necessarily mean better clustering? I came to this seminar hoping to find a new perspective on that uncertainty.</p>
+  <p>While reproducing the P22 mouse-brain RNA clustering in Zhang et al. [2], I recovered 10 clusters instead of the reported 11 (ARI ≈ 0.77), even using the released code. I initially wanted to close this gap, but found myself questioning that very goal. If the published cluster labels are themselves inferred rather than observed ground truth, does matching them more closely necessarily mean better clustering? I came to this seminar hoping to find a new perspective on that uncertainty.</p>
 </blockquote>
 
 ## Why Two Intuitive Approaches Fall Short
@@ -99,29 +101,17 @@ How reliable are these confidence sets? The main theorem establishes a **finite-
 The empirical results examine both **coverage** and **average confidence set size**. In Gaussian and Gamma mixture simulations, stochastic conformal clustering offers a more favorable balance between reliability and informativeness than the naive approaches in the reported settings. Applications to single-cell RNA-seq further illustrate how confidence sets can reveal ambiguity in cell-type assignments that conventional hard clustering may obscure.
 
 
+
 <blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
 
   <p><strong style="color: #167d57;">Q6. Why can replacing just one observation change the cluster labels of others?</strong></p>
-
-  <p>Unlike supervised classification, clustering is a <strong>global, data-dependent procedure</strong>: an observation's assignment depends not only on its own features but also on the other observations used to fit the clustering model.</p>
-
-  <p>Consider K-means with two clusters. Replacing one observation may shift a cluster centroid and consequently move the decision boundary. A point near that boundary could then switch clusters, even though its own features remain unchanged. Similarly, in a Gaussian Mixture Model (GMM), replacing one observation may alter the estimated mixture weights, means, or covariances, thereby changing other observations' posterior cluster probabilities.</p>
-
-  <p>For example, suppose an unchanged observation x initially has estimated soft labels:</p>
-
-  <p><strong>γ̂<sub>D</sub>(x) = (0.70, 0.20, 0.10)</strong></p>
-
-  <p>After replacing another observation and refitting the model on D′, its probabilities might become:</p>
-
-  <p><strong>γ̂<sub>D′</sub>(x) = (0.40, 0.50, 0.10)</strong></p>
-
-  <p>These hypothetical values illustrate that even an unchanged observation can receive substantially different cluster probabilities. The comparison assumes that cluster labels have been consistently aligned.</p>
 
   <p><strong>What does replace-one stability measure?</strong> Importantly, Allen and colleagues go beyond checking whether a single hard label changes. Their stability measure compares the <strong>joint distributions of the stochastic labels of the remaining n − 1 observations</strong> before and after replacing one observation, using an L1 distance and averaging over possible replacements. Small changes indicate a stable clustering procedure; large changes indicate sensitivity to individual observations.</p>
 
   <p><strong>Why does this matter for conformal coverage?</strong> Because estimated cluster labels depend on the dataset, calibration and test scores may not satisfy the exchangeability conditions required by standard conformal prediction. Replace-one stability helps control the resulting coverage error. Together with <strong>soft-label consistency</strong> (how accurately the true soft-label probabilities are estimated), it enters the finite-sample coverage lower bound. Stability alone does not guarantee valid coverage: a clustering procedure can be stable but consistently wrong.</p>
 
-  <p><strong>Connection to my research:</strong> This reminds me of my P22 mouse-brain clustering reproduction, where I obtained 10 clusters instead of the published 11. That discrepancy does not itself demonstrate replace-one instability, since preprocessing, initialization, and implementation differences may also explain it. Still, it raises an interesting question: how sensitive would the inferred clustering structure be to small perturbations of the underlying data?</p>
+  
+<p><strong>Connection to my research:</strong> This reminds me of my P22 mouse-brain clustering reproduction, where I obtained 10 clusters instead of the 11 reported by Zhang et al. [2]. That discrepancy does not itself demonstrate replace-one instability, since preprocessing, initialization, and implementation differences may also explain it. Still, it raises an interesting question: how sensitive would the inferred clustering structure be to small perturbations of the underlying data?</p>
 
 </blockquote>
 
@@ -131,7 +121,9 @@ The empirical results examine both **coverage** and **average confidence set siz
 
 ## References
 
-1. Zhang, D., Deng, Y., et al. (2023).
-   Spatial epigenome–transcriptome co-profiling of
-   mammalian tissues. *Nature*, 616, 113–122.
-   https://doi.org/10.1038/s41586-023-05795-1
+
+## References
+
+[1] Hur, Y., Nath, A., & Allen, G. (2026). Inference for Clustering: Conformal Sets for Cluster Labels. *arXiv preprint*, arXiv:2604.03488. https://doi.org/10.48550/arXiv.2604.03488
+
+[2] Zhang, D., Deng, Y., et al. (2023). Spatial epigenome–transcriptome co-profiling of mammalian tissues. *Nature*, 616, 113–122. https://doi.org/10.1038/s41586-023-05795-1
