@@ -38,3 +38,13 @@ permalink: /notes/durable-clinical-ai/
 *Talk: From Real-World Data to Durable Clinical AI: Building Reliable Evidence Across Institutions and Over Time*
 
 ## Motivation: What Happens After Model Deployment?
+
+Statistical models are typically developed and evaluated using data collected within a particular period. Yet a model that performs well today may not remain reliable years after deployment. Patient populations, clinical practices, coding systems, and treatment options can all change, potentially altering both the distribution of predictors and their relationships with clinical outcomes.
+
+This problem is particularly consequential for clinical AI, where models may continue to inform real-world decisions long after their initial validation. Temporal and institutional distribution shifts can gradually undermine predictive performance, while limited outcome labels, computational costs, and regulatory constraints make frequent retraining difficult.
+
+In this seminar, Tianxi Cai presented a broader perspective on clinical AI: rather than focusing solely on predictive accuracy at the time of development, statistical methods should also address how models can remain reliable across changing environments.
+
+
+
+
