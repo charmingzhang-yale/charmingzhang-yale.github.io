@@ -64,6 +64,32 @@ One way to address this problem is to extract and organize information that conv
 
 Yet an automatically generated annotation is not equivalent to an observed clinical outcome. Even if LLMs make it possible to label thousands of additional records, those labels may still contain errors. Treating them as ground truth could carry these errors into downstream prediction or statistical inference. The challenge is therefore not only to obtain clinical information at scale, but also to account for its reliability.
 
+## GUARD: Updating Models Under Distribution Shift
+
+When a prediction model deteriorates over time, a natural response is to retrain it using more recent data. But what if reliable outcome labels are scarce, or frequent retraining is too costly? One alternative is **transfer learning**, which borrows information from historical or external populations. However, conventional approaches often favor sources that closely resemble the current target population, potentially overlooking useful information from more heterogeneous sources.
+
+Another approach is **distributionally robust optimization (DRO)**, which seeks a model that performs well under unfavorable distributions within a specified uncertainty set. While this offers protection against distribution shifts, an overly broad uncertainty set can lead to conservative predictions that sacrifice accuracy in the current population. This creates a tension between **optimizing for today's patients and preparing for tomorrow's uncertainty**.
+
+To address this trade-off, **GUARD (Guided and Uncertainty-Aware Robustness to Domain Shift)** combines target-guided transfer learning with robust optimization [1]. Rather than retraining a complex model from scratch, it constructs a lower-dimensional update using the existing predictor and additional features. Its central idea is to borrow information from mixtures of heterogeneous source populations while remaining anchored to the current target. Importantly, GUARD also accounts for differences in the statistical uncertainty of source estimates, rather than treating every source as equally reliable. Double machine learning and cross-fitting are used to support efficient estimation and inference.
+
+In an application to rheumatoid arthritis disease activity prediction, GUARD maintained relatively stable prediction errors across subsequent years, while several conventional approaches experienced greater performance degradation. The results illustrate why evaluating a model only at the time of development may miss an important dimension of its reliability: how well it continues to perform as the clinical environment changes.
+
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">Q2. How much present accuracy should we sacrifice for future robustness?</strong></p>
+
+  <p>My instinct is to accept some loss in current predictive accuracy if it makes a model more reliable over time. But how much should we be willing to sacrifice? I find it difficult to decide where that balance should lie, especially when future distribution shifts are unknown. Even if we can quantify the trade-off statistically, I wonder whether the appropriate choice ultimately depends on the clinical consequences of prediction errors.</p>
+
+</blockquote>
+
+
+
+## References
+
+[1] Xiong, X., Guo, Z., & Cai, T. (2026). Guided Uncertainty-Aware Robust Domain Transfer. *arXiv preprint*, arXiv:2609.35654. [https://doi.org/10.48550/arXiv.2609.35654](https://doi.org/10.48550/arXiv.2609.35654)
+
+[2] Gu, Y., Liao, K., & Cai, T. (2026). Unveiling Invariant and Transferable Latent Factors Across Heterogeneous Environments via ATLAS. *arXiv preprint*, arXiv:2607.18209. [https://doi.org/10.48550/arXiv.2607.18209](https://doi.org/10.48550/arXiv.2607.18209)
 
 
 
