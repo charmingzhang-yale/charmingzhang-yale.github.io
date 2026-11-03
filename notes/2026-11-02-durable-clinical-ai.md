@@ -56,6 +56,14 @@ In this seminar, Tianxi Cai presented a broader perspective on clinical AI: rath
 
 </blockquote>
 
+## From EHR Data to Reliable Evidence
+
+Electronic health records (EHRs) contain extensive clinical information, but how much of it can be treated as reliable evidence? Diagnostic codes do not always correspond to confirmed diseases, while important clinical outcomes may remain buried in unstructured notes. In one example presented during the seminar, only 58% of patients with three or more rheumatoid arthritis codes actually had the disease. Having more data, therefore, does not necessarily mean having more accurate clinical labels.
+
+One way to address this problem is to extract and organize information that conventional structured records may miss. The seminar presented **representation learning and knowledge graphs** for integrating heterogeneous EHR data, alongside **large language models (LLMs)** for extracting clinical information from free-text notes. In a human–agent co-learning example, the reported annotation accuracy improved from 81.4% to 89.0% through a process involving human review and model refinement.
+
+Yet an automatically generated annotation is not equivalent to an observed clinical outcome. Even if LLMs make it possible to label thousands of additional records, those labels may still contain errors. Treating them as ground truth could carry these errors into downstream prediction or statistical inference. The challenge is therefore not only to obtain clinical information at scale, but also to account for its reliability.
+
 
 
 
