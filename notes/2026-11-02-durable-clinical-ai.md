@@ -35,7 +35,7 @@ permalink: /notes/durable-clinical-ai/
 
 *Speaker: Prof. Tianxi Cai · Harvard T.H. Chan School of Public Health · November 2, 2026*
 
-*Talk: From Real-World Data to Durable Clinical AI: Building Reliable Evidence Across Institutions and Over Time*
+*Based on research presented in the seminar, including GUARD [1] and ATLAS [2].*
 
 ## Motivation: What Happens After Model Deployment?
 
