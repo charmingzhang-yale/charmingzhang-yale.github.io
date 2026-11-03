@@ -46,5 +46,16 @@ This problem is particularly consequential for clinical AI, where models may con
 In this seminar, Tianxi Cai presented a broader perspective on clinical AI: rather than focusing solely on predictive accuracy at the time of development, statistical methods should also address how models can remain reliable across changing environments.
 
 
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">My Reflection — Time in the Data vs. Time After Deployment</strong></p>
+
+  <p>I have worked with several time series models and have often thought about how time affects the data being modeled. What I had rarely considered, however, was what happens to the model itself as time passes. Looking back, I realize that I had often treated model fitting and validation as the end of an analysis, without asking whether the same model would remain reliable years later.</p>
+
+  <p>This seminar made me reconsider that assumption. Even if a model accounts for temporal patterns in its training data, will its predictions remain trustworthy when the population and environment have changed? My first instinct would be to collect new data and retrain the model, but I had not seriously considered how difficult that might be in real clinical settings.</p>
+
+</blockquote>
+
+
 
 
