@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "When a Cluster Label Is Not Enough: Conformal Inference for Clustering"
-description: "Research Seminar Notes by Charming Zhang"
+description: "Research Seminar Notes"
 permalink: /notes/conformal-clustering/
 ---
 
@@ -30,7 +30,7 @@ permalink: /notes/conformal-clustering/
 }
 </style>
 
-*Seminar: Genevera Allen (Columbia University) · October 19, 2026*
+*Speaker: Prof. Genevera Allen · Columbia University · October 19, 2026*
 
 *Based primarily on the research by Hur, Nath, and Allen [1].*
 
