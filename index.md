@@ -66,7 +66,9 @@ I am also studying geographic patterns in Alzheimer's disease and related dement
 
 I write research notes on statistical methods and biomedical applications, combining technical explanations with questions and reflections arising from papers and academic seminars.
 
-- [Conformal Clustering — Genevera Allen (2026)](/notes/conformal-clustering/)
+
+- [When Models Age: Statistical Perspectives on Durable Clinical AI](/notes/durable-clinical-ai/) — Tianxi Cai · November 2, 2026
+- [When a Cluster Label Is Not Enough: Conformal Inference for Clustering](/notes/conformal-clustering/) — Genevera Allen · October 19, 2026
 
 
 ## Contact
