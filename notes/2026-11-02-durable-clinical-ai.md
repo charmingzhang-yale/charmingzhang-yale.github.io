@@ -104,6 +104,17 @@ The central insight is that **statistical heterogeneity does not necessarily imp
 
 </blockquote>
 
+## What Makes Clinical AI Durable?
+
+A model that performs well on a held-out test set is not necessarily one that will remain reliable after deployment. Its predictions depend on the quality of the underlying clinical information, the stability of relationships learned from historical data, and the extent to which those relationships remain applicable in new environments.
+
+GUARD and ATLAS approach this challenge from complementary directions. GUARD considers how an existing model can be updated while guarding against future distribution shifts, whereas ATLAS seeks latent representations that retain predictive value across heterogeneous environments. Neither approach can guarantee robustness against arbitrary changes; both rely on assumptions about which future environments or underlying structures can reasonably be considered.
+
+Perhaps the broader lesson is that **model reliability cannot be established once and for all at the end of training**. It requires continued evaluation, careful use of imperfect information, and statistical methods that make uncertainty explicit. In clinical AI, the question is therefore not simply whether a model predicts accurately today, but under what conditions we can continue to trust it tomorrow.
+
+Prof. Cai concluded the seminar with a memorable analogy:
+
+> "AI algorithms age like milk, not wine — but with the right GUARD, they can age like cheese."
 
 
 ## References
