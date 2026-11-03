@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "When Models Age: Statistical Perspectives on Durable Clinical AI"
-description: "Research Seminar Notes by Charming Zhang"
+description: "Research Seminar Notes"
 permalink: /notes/durable-clinical-ai/
 ---
 
@@ -33,7 +33,7 @@ permalink: /notes/durable-clinical-ai/
 }
 </style>
 
-*Seminar: Tianxi Cai (Harvard T.H. Chan School of Public Health) · November 2, 2026*
+*Speaker: Prof. Tianxi Cai · Harvard T.H. Chan School of Public Health · November 2, 2026*
 
 *Talk: From Real-World Data to Durable Clinical AI: Building Reliable Evidence Across Institutions and Over Time*
 
