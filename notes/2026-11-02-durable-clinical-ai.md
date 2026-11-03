@@ -77,9 +77,30 @@ In an application to rheumatoid arthritis disease activity prediction, GUARD mai
 
 <blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
 
-  <p><strong style="color: #167d57;">Q2. How much present accuracy should we sacrifice for future robustness?</strong></p>
+  <p><strong style="color: #167d57;">Q1. How much present accuracy should we sacrifice for future robustness?</strong></p>
 
   <p>My instinct is to accept some loss in current predictive accuracy if it makes a model more reliable over time. But how much should we be willing to sacrifice? I find it difficult to decide where that balance should lie, especially when future distribution shifts are unknown. Even if we can quantify the trade-off statistically, I wonder whether the appropriate choice ultimately depends on the clinical consequences of prediction errors.</p>
+
+</blockquote>
+
+## ATLAS: Learning Transferable Representations
+
+Rather than updating an existing prediction model, another possibility is to learn representations that remain useful across changing environments. But which parts of the data can actually be transferred? Consider patients from different hospitals: some underlying clinical patterns may be shared, while others reflect differences in patient populations, measurement practices, or institutional characteristics.
+
+**ATLAS (Auxiliary-label and invariance-guided Transfer via Latent Alignment across heterogeneous environmentS)** addresses this problem through a multi-environment factor model [2]. It decomposes high-dimensional observations into **invariant factors**, whose loading structures are shared across environments, and **heterogeneous factors**, whose loadings may differ. By separating these sources of variation, ATLAS aims to identify stable latent representations that can support prediction in new environments.
+
+However, does robustness require discarding all heterogeneous factors? Not necessarily. Some environment-specific variation may still contain information relevant to the outcome. ATLAS therefore incorporates **auxiliary labels**, which can provide additional supervision when reliable outcome labels are limited. Under its modeling assumptions, these labels help identify transferable predictive information within the heterogeneous factors. Without such information, relying on invariant factors alone can be a more robust strategy.
+
+The central insight is that **statistical heterogeneity does not necessarily imply a lack of predictive value**. Reliable transfer learning requires distinguishing variation that undermines generalization from variation that may still contribute useful information.
+
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">Q2. When does filtering noise become discarding biological information?</strong></p>
+
+  <p>While preprocessing the P22 mouse-brain spatial RNA–ATAC dataset for my own research, I encountered two feature-filtering thresholds: RNA genes had to be detected in at least 50 training spots, while ATAC peaks had to be accessible in at least 3% of training spots (approximately 222 out of 7,372). I understand that these thresholds help reduce sparsity and potentially unreliable signals, but I am not sure where the boundary between technical noise and meaningful biological variation should lie.</p>
+
+  <p>For example, could an ATAC peak appearing in fewer than 3% of spots reflect a rare cell population or spatially localized regulatory activity rather than noise? If so, filtering it out might remove precisely the biological information we hope to capture. This makes me wonder how sensitive our learned representations are to these preprocessing choices, and whether the thresholds should depend more explicitly on the biological questions we are trying to answer.</p>
 
 </blockquote>
 
