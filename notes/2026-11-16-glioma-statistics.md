@@ -108,6 +108,11 @@ Even with stronger evidence of treatment benefit, clinical decisions require mor
 
 [3] Molinaro, A. M., Wiencke, J. K., Warrier, G., et al. (2022). Interactions of Age and Blood Immune Factors and Noninvasive Prediction of Glioma Survival. *Journal of the National Cancer Institute*, 114(3), 446–457. [https://doi.org/10.1093/jnci/djab195](https://doi.org/10.1093/jnci/djab195)
 
+
+[5] Hervey-Jumper, S. L., Zhang, Y., Phillips, J. J., et al. (2023). Interactive Effects of Molecular, Therapeutic, and Patient Factors on Outcome of Diffuse Low-Grade Glioma. *Journal of Clinical Oncology*, 41(11), 2029–2042. [https://doi.org/10.1200/JCO.21.02929](https://doi.org/10.1200/JCO.21.02929)
+
+
+
 [4] Chunduru, P., Phillips, J. J., & Molinaro, A. M. (2022). Prognostic Risk Stratification of Gliomas Using Deep Learning in Digital Pathology Images. *Neuro-Oncology Advances*, 4(1), vdac111. [https://doi.org/10.1093/noajnl/vdac111](https://doi.org/10.1093/noajnl/vdac111)
 
 
