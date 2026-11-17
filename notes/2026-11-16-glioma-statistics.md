@@ -78,6 +78,24 @@ A different approach was explored by Chunduru, Phillips, and Molinaro [4], who d
 These studies illustrate two ways of extracting prognostic information from high-dimensional data: one uses biological reference knowledge to construct interpretable features, while the other learns representations directly from images. Yet **statistical association, improved prediction, and biological interpretation are distinct achievements**. A complex representation may contain useful information beyond established markers, but its predictive improvement must be evaluated carefully, and its clinical relevance requires further validation.
 
 
+## From Prognosis to Treatment Decisions
+
+A biomarker may help predict how long a patient is likely to survive, but does that tell us which treatment would benefit the patient most? Not necessarily. **Prognostic prediction** concerns the likelihood of future outcomes, whereas **causal inference** asks how those outcomes might change under different interventions. A patient with a poor prognosis does not necessarily benefit more from aggressive treatment, and a strong predictor of survival is not automatically a predictor of treatment benefit.
+
+This distinction is particularly important when studying the **extent of surgical resection (EOR)** in glioma patients. Observational studies may find that patients who undergo more extensive tumor removal survive longer. However, the extent of resection is not randomly assigned: tumor location, preoperative tumor volume, and patient characteristics may influence both surgical decisions and subsequent survival. These differences introduce potential confounding, making it difficult to interpret observed survival differences as causal effects of surgery.
+
+In a study of 757 patients with IDH-mutant grade 2 glioma, Hervey-Jumper and colleagues [5] used **propensity score matching** to compare patients with similar observed characteristics but different extents of resection. Their analysis found that EOR of at least 75% was associated with improved overall survival, while a threshold of 80% was reported for progression-free survival. By accounting for measured differences between patients, propensity score methods can make observational comparisons more informative. Nevertheless, they cannot eliminate unmeasured confounding or fully reproduce randomized treatment assignment.
+
+Even with stronger evidence of treatment benefit, clinical decisions require more than survival estimates alone. More extensive surgery may improve tumor control while increasing the risk of neurological impairment. Translating statistical evidence into patient care therefore requires considering **expected treatment benefit, potential harm, and individual patient circumstances**, rather than relying on any single prognostic marker or predicted outcome.
+
+<blockquote style="background-color: #f0f8f2; color: #394b59; border-left: 4px solid #159957; padding: 12px 18px; border-radius: 0 6px 6px 0;">
+
+  <p><strong style="color: #167d57;">My Reflection — From Prognostic Value to Clinical Decisions</strong></p>
+
+  <p>I think a biomarker that predicts mortality risk can still have clinical value, even if it cannot tell us which treatment would be most effective. It can help us understand a patient's prognosis and serve as a useful reference when planning care, but it should not determine treatment decisions on its own. For glioma surgery in particular, deciding whether more extensive resection is worthwhile requires evidence about potential survival benefits, surgical risks, and possible neurological damage, as well as the clinician's judgment about the individual patient. This made me realize that <strong>predicting what may happen to a patient and determining how to intervene for a better outcome are two different statistical questions</strong>.</p>
+
+</blockquote>
+
 
 
 ## References
