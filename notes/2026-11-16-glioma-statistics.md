@@ -67,6 +67,17 @@ But what if the relationships between these predictors and survival are more com
 An important distinction remains between **statistical association and predictive improvement**. A molecular marker may remain significantly associated with survival after adjustment for other variables, yet contribute little to a model's ability to distinguish patients with different risks. Measures such as the **C-index** assess predictive discrimination, while calibration examines whether predicted survival probabilities agree with observed outcomes. Establishing prognostic relevance therefore requires more than identifying statistically significant regression coefficients, especially when new biomarkers are being added to models that already contain strong clinical predictors.
 
 
+## Beyond Tumor Genetics: High-Dimensional Biomarkers
+
+Molecular classification provides important prognostic information, but patients within the same molecular subtype can still experience substantially different outcomes. Could other biological measurements help explain this remaining variation? Two studies presented in the seminar explored this question using high-dimensional DNA methylation data and digital pathology images.
+
+In the first study, Molinaro and colleagues [3] used blood DNA methylation profiles to estimate immune cell proportions and epigenetic age. Rather than treating individual methylation sites as separate predictors, the researchers applied reference-based cell mixture deconvolution to obtain biologically interpretable immune characteristics. They then used survival analysis and recursive partitioning to investigate how these characteristics interacted with patient age. Among 197 patients in the training set, combinations of age, CD4+ T-cell proportion, and neutrophil proportion identified four groups with markedly different survival outcomes. Similar risk stratification was subsequently examined in 350 patients with other glioma molecular subtypes.
+
+A different approach was explored by Chunduru, Phillips, and Molinaro [4], who developed a **survival deep learning** framework using H&E-stained digital pathology images from 766 glioma patients. A convolutional neural network learned image-based risk scores using survival outcomes, while Cox regression assessed their prognostic value beyond existing clinical and molecular characteristics. Adding the learned risk score to a model containing age and molecular subtype increased the reported C-index from 0.82 to 0.84.
+
+These studies illustrate two ways of extracting prognostic information from high-dimensional data: one uses biological reference knowledge to construct interpretable features, while the other learns representations directly from images. Yet **statistical association, improved prediction, and biological interpretation are distinct achievements**. A complex representation may contain useful information beyond established markers, but its predictive improvement must be evaluated carefully, and its clinical relevance requires further validation.
+
+
 
 
 ## References
@@ -75,5 +86,11 @@ An important distinction remains between **statistical association and predictiv
 
 
 [2] Molinaro, A. M., Hervey-Jumper, S., Morshed, R. A., et al. (2020). Association of Maximal Extent of Resection of Contrast-Enhanced and Non–Contrast-Enhanced Tumor With Survival Within Molecular Subgroups of Patients With Newly Diagnosed Glioblastoma. *JAMA Oncology*, 6(4), 495–503. [https://doi.org/10.1001/jamaoncol.2019.6143](https://doi.org/10.1001/jamaoncol.2019.6143)
+
+
+[3] Molinaro, A. M., Wiencke, J. K., Warrier, G., et al. (2022). Interactions of Age and Blood Immune Factors and Noninvasive Prediction of Glioma Survival. *Journal of the National Cancer Institute*, 114(3), 446–457. [https://doi.org/10.1093/jnci/djab195](https://doi.org/10.1093/jnci/djab195)
+
+[4] Chunduru, P., Phillips, J. J., & Molinaro, A. M. (2022). Prognostic Risk Stratification of Gliomas Using Deep Learning in Digital Pathology Images. *Neuro-Oncology Advances*, 4(1), vdac111. [https://doi.org/10.1093/noajnl/vdac111](https://doi.org/10.1093/noajnl/vdac111)
+
 
 
