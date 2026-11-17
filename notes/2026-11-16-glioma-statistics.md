@@ -57,7 +57,23 @@ Rather than assuming that a biologically meaningful classification is automatica
 
 </blockquote>
 
+
+## From Molecular Subtypes to Prognostic Models
+
+Identifying biologically distinct tumor groups is only the beginning. To evaluate their prognostic value, we need to ask whether these distinctions help explain differences in patient survival. Unlike ordinary regression outcomes, survival data often involve censoring, as some patients remain alive at the end of follow-up. Kaplan–Meier curves can describe survival differences across groups, while Cox proportional hazards models examine associations after adjusting for clinical factors such as age and tumor grade.
+
+But what if the relationships between these predictors and survival are more complicated than a conventional Cox model can adequately capture? In a study of newly diagnosed glioblastoma, Molinaro and colleagues [2] examined survival in relation to molecular status, patient characteristics, and extent of surgical resection. Because the proportional hazards assumption was not satisfied for some predictors, particularly extent of resection, the researchers also used **recursive partitioning** to identify patient groups with different survival experiences. These risk groups were subsequently evaluated in independent cohorts, illustrating how statistical models can help translate complex prognostic associations into more interpretable patient stratification.
+
+An important distinction remains between **statistical association and predictive improvement**. A molecular marker may remain significantly associated with survival after adjustment for other variables, yet contribute little to a model's ability to distinguish patients with different risks. Measures such as the **C-index** assess predictive discrimination, while calibration examines whether predicted survival probabilities agree with observed outcomes. Establishing prognostic relevance therefore requires more than identifying statistically significant regression coefficients, especially when new biomarkers are being added to models that already contain strong clinical predictors.
+
+
+
+
 ## References
 
 [1] Eckel-Passow, J. E., Lachance, D. H., Molinaro, A. M., et al. (2015). Glioma Groups Based on 1p/19q, IDH, and TERT Promoter Mutations in Tumors. *New England Journal of Medicine*, 372, 2499–2508. [https://doi.org/10.1056/NEJMoa1407279](https://doi.org/10.1056/NEJMoa1407279)
+
+
+[2] Molinaro, A. M., Hervey-Jumper, S., Morshed, R. A., et al. (2020). Association of Maximal Extent of Resection of Contrast-Enhanced and Non–Contrast-Enhanced Tumor With Survival Within Molecular Subgroups of Patients With Newly Diagnosed Glioblastoma. *JAMA Oncology*, 6(4), 495–503. [https://doi.org/10.1001/jamaoncol.2019.6143](https://doi.org/10.1001/jamaoncol.2019.6143)
+
 
