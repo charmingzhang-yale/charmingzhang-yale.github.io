@@ -66,7 +66,7 @@ I am also studying geographic patterns in Alzheimer's disease and related dement
 
 I write research notes on statistical methods and biomedical applications, combining technical explanations with questions and reflections arising from papers and academic seminars.
 
-
+- [From Molecular Subtypes to Clinical Decisions: Statistics in Glioma Care](/notes/glioma-statistics/) — Annette Molinaro · November 16, 2026
 - [When Models Age: Statistical Perspectives on Durable Clinical AI](/notes/durable-clinical-ai/) — Tianxi Cai · November 2, 2026
 - [When a Cluster Label Is Not Enough: Conformal Inference for Clustering](/notes/conformal-clustering/) — Genevera Allen · October 19, 2026
 
