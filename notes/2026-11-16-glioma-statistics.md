@@ -97,6 +97,16 @@ Even with stronger evidence of treatment benefit, clinical decisions require mor
 </blockquote>
 
 
+## From Statistical Evidence to Clinical Impact
+
+A statistical model may identify meaningful patient subgroups or predict survival with reasonable accuracy, but how can we know whether its findings will remain reliable beyond the original study population? Internal validation can assess model performance within the available data, yet it cannot fully capture differences in patient characteristics, clinical practices, or measurement procedures across institutions.
+
+**External validation** provides an important next step. In the glioblastoma study by Molinaro and colleagues [2], prognostic risk groups developed at UCSF were evaluated using independent patient cohorts from the Mayo Clinic and the Ohio Brain Tumor Study. Similarly, Hervey-Jumper and colleagues [5] examined the reproducibility of survival risk stratification in two external cohorts. Such analyses help establish whether statistical findings extend beyond the populations in which they were originally developed. For models that estimate individual survival probabilities, evaluation should also consider **discrimination and calibration**, rather than relying on risk separation alone [6].
+
+Yet successful external validation does not automatically establish clinical benefit. Even if a model reliably predicts patient outcomes, we still need to determine whether using its predictions would lead to better treatment decisions. Measures of clinical utility, such as net benefit, can help evaluate potential decision consequences, while evidence of actual clinical impact requires studying what happens when the model is introduced into practice.
+
+The broader challenge is therefore not simply to discover statistically meaningful patterns, but to understand **which conclusions those patterns support, how reliably they generalize, and whether acting on them can improve patient care**.
+
 
 ## References
 
@@ -108,12 +118,12 @@ Even with stronger evidence of treatment benefit, clinical decisions require mor
 
 [3] Molinaro, A. M., Wiencke, J. K., Warrier, G., et al. (2022). Interactions of Age and Blood Immune Factors and Noninvasive Prediction of Glioma Survival. *Journal of the National Cancer Institute*, 114(3), 446–457. [https://doi.org/10.1093/jnci/djab195](https://doi.org/10.1093/jnci/djab195)
 
+[4] Chunduru, P., Phillips, J. J., & Molinaro, A. M. (2022). Prognostic Risk Stratification of Gliomas Using Deep Learning in Digital Pathology Images. *Neuro-Oncology Advances*, 4(1), vdac111. [https://doi.org/10.1093/noajnl/vdac111](https://doi.org/10.1093/noajnl/vdac111)
 
 [5] Hervey-Jumper, S. L., Zhang, Y., Phillips, J. J., et al. (2023). Interactive Effects of Molecular, Therapeutic, and Patient Factors on Outcome of Diffuse Low-Grade Glioma. *Journal of Clinical Oncology*, 41(11), 2029–2042. [https://doi.org/10.1200/JCO.21.02929](https://doi.org/10.1200/JCO.21.02929)
 
+[6] Riley, R. D., Archer, L., Snell, K. I. E., et al. (2024). Evaluation of clinical prediction models (part 2): How to undertake an external validation study. *BMJ*, 384, e074820. [https://doi.org/10.1136/bmj-2023-074820](https://doi.org/10.1136/bmj-2023-074820)
 
-
-[4] Chunduru, P., Phillips, J. J., & Molinaro, A. M. (2022). Prognostic Risk Stratification of Gliomas Using Deep Learning in Digital Pathology Images. *Neuro-Oncology Advances*, 4(1), vdac111. [https://doi.org/10.1093/noajnl/vdac111](https://doi.org/10.1093/noajnl/vdac111)
 
 
 
